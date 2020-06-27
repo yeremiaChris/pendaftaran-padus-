@@ -1,0 +1,107 @@
+{% load static %}
+<link href="https://fonts.googleapis.com/css2?family=Krona+One&display=swap" rel="stylesheet"> 
+<style>
+
+    .sistem {
+        display: grid;
+        grid-template-rows: 1fr 2fr;
+        justify-content: start;
+        background-color: aliceblue;
+        width: 25%;
+        margin: auto;
+        border-radius: 10px;
+        margin-top: 20px;
+        justify-content: center;
+        padding-bottom: 10px;
+        box-sizing: border-box;
+    }
+    .gambar img {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+    }
+    input {
+        width: 350px;
+        height: 40px;
+        border-radius: 10px;
+        border: 1px solid black;
+        font-size: 15pt;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+    input:focus {
+        box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+        border: 1px solid rgba(81, 203, 238, 1);
+    }
+    button{
+        margin-top: 30px;
+        width: 80px;
+        height: 30px;
+        background-color: rgb(90, 228, 90);
+        border: none;
+        border-radius: 5px;
+        font-family: 'Righteous', cursive;
+        font-size: 12pt;
+    }
+    button:hover{
+        background-color: rgb(129, 238, 129);
+    }
+    .gambar,.title {
+        display: grid;
+        justify-content: center;
+    }
+    body {
+        background-color: rgb(202, 215, 226);
+        font-family: 'Krona One', sans-serif;
+    }
+    li {
+        color: red;
+        list-style: none;
+        overflow: hidden;
+        font-size: small;
+        text-align: center;
+        box-sizing: border-box;
+    }
+    .error p {
+        color: red;
+    }
+</style>
+
+    <div class="sistem">
+        <div class="title">
+            <h1>Register</h1>
+        </div>
+        <div class="gambar">
+            <img src="{% static 'account/img/jakarta.jpg' %}" alt="">
+        </div>
+        <div class="form">
+            <form action="" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                {% for message in messages %}
+                    <div class="error">
+                        <p id="messages">{{message}}</p>
+                    </div>
+                {% endfor %}
+                <div class="username">
+                    <h4>Username </h4>
+                </div>
+                <div class="input">
+                    <input type="text" name="username">
+                </div>
+
+                <div class="username">
+                    <h4>Password : </h4> 
+                </div>
+                <div class="input">
+                    <input type="password" name="password">
+                </div>
+                
+
+                
+
+                <div class="tombol">
+                    <button type="submit">Login</button>
+                </div>
+            </form>
+        </div>
+    </div>

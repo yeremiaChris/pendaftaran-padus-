@@ -1,0 +1,193 @@
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+    line-height: 1;
+    font-family: 'Krona One', sans-serif;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.container {
+    display: grid;
+    grid-template-areas: 'logo topbar'
+                         'sidebar content';
+    grid-template-rows: 1fr 100vh;
+    grid-template-columns: 1fr 5fr ;
+    box-sizing: border-box;
+    
+
+}
+.sidebar {
+    grid-area: sidebar;
+    background-color: white;
+    display: grid;
+}
+.logo {
+    grid-area: logo;
+    background-color: white;
+    display: grid;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box  ;
+}
+.logo .gambar img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+
+.topbar {
+    grid-area: topbar;
+    background-image: linear-gradient(rgb(120, 59, 235),violet);
+    box-shadow: inset 5px 0 5px rgba(0,0,0,.2);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    justify-items: center;
+    align-items: center;
+    
+}
+.topbar .top {
+    box-sizing: border-box;
+    border-radius: 10px;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+.topbar .agenda {
+    width: 400px;
+    height: 150px;
+    background-color: white;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    
+}
+.judul {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
+.top img {
+    width: 50px;
+    height: 50px;
+}
+.jumlah h1{
+    font-size: 20pt;
+}
+.topbar .jadwal {
+    width: 400px;
+    height: 150px;
+    background-color: white;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+.topbar .peserta {
+    width: 400px;
+    height: 150px;
+    background-color: white;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+.content {
+    grid-area: content;
+    background-color: rgb(230, 224, 224);
+    box-shadow: inset 5px 0 5px rgba(0,0,0,.2);
+    font-family: 'Krona One', sans-serif;
+}
+
+.container .sidebar .menu {
+    margin: 30px auto;
+}
+.container .sidebar .menu ul li{
+    padding: 30px;
+}
+.container .sidebar .menu ul li a{
+    text-decoration: none;
+    font-size: 15pt;
+    color: black;
+}
+.container .content table {
+    margin: -60px auto;
+    width: 90%;
+    text-align: left;
+    background-color: white;
+    border-radius: 20px;
+    border-collapse: collapse;
+    box-shadow: 1px 1px 2px rgba(0,0,0,.5);
+    overflow: hidden;
+}
+th,td {
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    border-bottom: 1px solid rgb(180, 174, 174);
+
+}
+
+th {
+    font-weight: bold;
+    text-align: center;
+    border-top: 1px solid rgb(180, 174, 174);
+}
+tr button{
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 7px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 8px;
+    width: 130px;
+}
+tr button:hover {
+    background-color: #44a047;
+}
+th.judul {
+    border-bottom: 0;
+}
+
+
+

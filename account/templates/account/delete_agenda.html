@@ -1,0 +1,53 @@
+{% extends 'account/base.html' %}
+{% block content %}
+{% include 'account/tulisan.html' %}
+
+<style>
+    form {
+        margin-top: -75px;
+    }
+    .pesan {
+        display: grid;
+        /* grid-template-columns: 1fr 1fr; */
+        grid-template-rows: 1fr 1fr;
+        background-color: white;
+        width: 50%;
+        height: 150px;
+        margin: auto;
+        border-radius: 10px;
+        padding: 20px;
+        box-sizing: border-box;
+
+    }
+    button{
+        width: 80px;
+        height: 30px;
+        background-color: rgb(90, 228, 90);
+        border: none;
+        border-radius: 5px;
+        font-family: 'Righteous', cursive;
+        font-size: 12pt;
+    }
+    button:hover{
+        background-color: rgb(129, 238, 129);
+    }
+
+</style>
+<form action="" method="POST">
+    {% csrf_token %}
+    <div class="pesan">
+        <div class="isipesan">
+            <h1>Yakin mau hapus {{ agenda }} ?</h1>
+        </div>
+        <div class="tombol">
+            <button type="submit">Yakin</button>
+            <a href="{% url 'agenda' %}">Cencel</a>
+        </div>
+    </div>
+</form>
+
+
+   
+   
+
+{% endblock content %}

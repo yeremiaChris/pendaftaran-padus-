@@ -1,0 +1,84 @@
+{% extends 'account/base_utama.html' %}
+{% load static %}
+{% block content %}
+    <style>
+        body {
+            background-color: rgb(248, 242, 242);
+        }
+        .col-lg img {
+            width: 500px;
+            height: 500px;
+        }
+        nav {
+            height: 140px;
+            font-size: 14pt;
+        }
+        .navbar-brand img {
+            width: 100px;
+            height: 100px;
+        }
+        .content {
+            box-shadow: 3px 3px 5px rgba(0,0,0,.3);
+        }
+        .content img {
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+    
+    <div class="container">
+        <div class="row mt-5 content">
+            <div class="col-lg pt-3" style="background-color: rgb(243, 239, 239);">
+                <img src="{% static 'account/img/jakarta.jpg' %}" alt="" class="thumbnail rounded-circle mx-auto d-block" width="70">
+                <h3 class="text-center">JADWAL KEGIATAN</h3>
+                <table class="table">
+                <thead>
+                    <tr>
+                    <th scope="col">No</th>
+                    <th scope="col">Hari & Tanggal</th>
+                    <th scope="col">Waktu</th>
+                    <th scope="col">Tempat</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for a in jadwal %}
+                    <tr>   
+                        <td>{{ forloop.counter }}</td>
+                        <td>{{ a.hari_waktu}}</td>
+                        <td>{{ a.hari_waktu }}</td>
+                        <td>{{ a.tempat }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+                </table>
+            </div>
+            <div class="col-lg ml-3 pt-3" style="background-color: rgb(243, 239, 239);">
+                <img src="{% static 'account/img/jakarta.jpg' %}" alt="" class="thumbnail rounded-circle mx-auto d-block" width="70">
+                <h3 class="text-center">Agenda Kegiatan</h3>
+                <table class="table">
+                <thead>
+                    <tr>
+                    <th scope="col">No</th>
+                    <th scope="col">Hari & Tanggal</th>
+                    <th scope="col">Waktu</th>
+                    <th scope="col">Tempat</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for a in agenda %}
+                    <tr>   
+                        <td>{{ forloop.counter }}</td>
+                        <td>{{ a.hari_waktu}}</td>
+                        <td>{{ a.hari_waktu }}</td>
+                        <td>{{ a.agenda }}</td>
+                        <td>{{ a.tempat }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+                </table>
+            </div>
+            
+        </div>
+    </div>
+
+ {% endblock content %}

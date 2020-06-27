@@ -1,0 +1,41 @@
+{% load static %}
+{% include 'account/tulisan.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'account/css/style.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Krona+One&display=swap" rel="stylesheet">
+
+    <title>dashboard</title>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="menu">
+                <ul>
+                    <li><a href="{% url 'beranda' %}">Beranda</a></li>
+                    <li><a href="{% url 'jadwal' %}">Jadwal</a></li>
+                    <li><a href="{% url 'agenda' %}">Agenda</a></li>
+                    <li><a href="{% url 'dashboard' %}">Peserta</a></li>
+                    <li><a href="">Akun</a></li>
+                    <hr>
+                    <li><a href="{% url 'logout' %}">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="topbar">
+        </div>
+        <div class="content">
+           {% block content %}{% endblock %}
+        </div>
+        <div class="logo">
+            <div class="gambar">
+                <img src="{% static 'account/img/jakarta.jpg' %}" alt="" >
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+{% extends 'account/base.html' %}
+{% block content %}
+{% include 'account/tulisan.html' %}
+
+<table>
+	<tr>
+		<th class="judul">Jadwal</th>
+	</tr>
+	<tr >
+		<th style="border-top: 0;"><button><a href="{% url 'create-jadwal' %}">Tambah</a> </button></th>
+	</tr>
+    
+	<tr>
+		<th>No</th>
+		<th>Hari</th>
+		<th>Waktu</th>
+		<th>Tempat</th>
+		<th>Aksi</th>
+	</tr>
+	{% for a in jadwal %}
+	<tr>   
+		<td>{{ forloop.counter }}</td>
+		<td>{{ a.hari_waktu}}</td>
+		<td>{{ a.hari_waktu }}</td>
+		<td>{{ a.tempat }}</td>
+		<td><button><a href="{% url 'update-jadwal' a.id_jadwal %}">Ubah</a></button><button style="margin-left: 2px; background-color: maroon;"><a href="{% url 'delete-jadwal' a.id_jadwal %}">Hapus</a></button></td>
+	</tr>
+	{% endfor %}
+</table>
+{% endblock content %}
